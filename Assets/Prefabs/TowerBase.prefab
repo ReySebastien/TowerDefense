@@ -140,10 +140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5429489451838770481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8037d8fd3c6ba40938c379de4c885a, type: 3}
+  m_Script: {fileID: 11500000, guid: dd3fc8120a23a56449f3d0b098014b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgrade: {fileID: 4528775209471139560, guid: 091e467ea317e3b48b12d6e79f778530, type: 3}
+  _upgrade: {fileID: 4528775209471139560, guid: 8d933a5e334154d4980a7a48af7344b7, type: 3}
   _fireRate: 0.1
 --- !u!135 &7915633187936587555
 SphereCollider:
