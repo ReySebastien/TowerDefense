@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -10,22 +8,29 @@ public class Spawner : MonoBehaviour
     private float currentSpawnTime { get; set; } = 0;
 
     public GameObject _enemyPrefab = null;
-    private GameObject enemyPrefab { get { return _enemyPrefab; } }
+    private GameObject enemyPrefabs { get { return _enemyPrefab; } }
 
-    void Start()
+    private void Start()
     {
-        
+        InvokeRepeating("Spawn", 0, spawnTime);
     }
 
-    void Update()
+    private void Spawn()
+    {
+        Vector3 randomPos = transform.position;
+        randomPos.x += Random.Range(-3.0f, 6.0f);
+        Instantiate(enemyPrefabs, randomPos, transform.rotation);
+    }
+
+    private void Update()
     {
         currentSpawnTime += Time.deltaTime;
-        if(currentSpawnTime >= spawnTime)
+        if (currentSpawnTime >= spawnTime)
         {
             currentSpawnTime = 0;
             Vector3 randomPos = transform.position;
-            randomPos.x += Random.Range(-3.0f, 3.0f);
-            Instantiate(enemyPrefab, transform.position, transform.rotation);
+            randomPos.x += Random.Range(-3.0f, 6.0f);
+            Instantiate(enemyPrefabs, randomPos, transform.rotation);
         }
     }
 }
